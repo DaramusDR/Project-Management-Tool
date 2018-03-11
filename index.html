@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project Traker</title>
+   <meta charset="windows-1252">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">       
+   <link rel="stylesheet" type="text/css" href="style.css"> 
+
+</head>
+
+<body> 
+    <header>
+      
+      <h1>
+
+        <span>Pro</span>
+        <span>je</span>
+        <span>ct</span>
+        <span></span>
+        <span>Tra</span>
+        <span>ck</span>
+        <span>er</span>
+        <span>!</span>
+
+      </h1>
+       
+    </header>
+
+<div class="formcontainer"> 
+
+    <div class="jumbotron">
+
+        <h3 class="display-4">Create A New Sprint:</h3>
+
+            <div class=class="form-group">
+
+                Sprint:<input class="form-control" type="text" name="sprint" id="sprint">
+                Types:<select class="form-control" id="type">
+                          <option value="Bugs">Bugs</option>
+                          <option value="Features">Features</option>
+                          <option value="Tasks">Tasks</option>
+                       </select>
+                Status:<select class="form-control" id="status">
+                          <option value="New">New</option>
+                          <option value="In Progress">In Progress</option>
+                          <option value="Feedback">Feedback</option>
+                          <option value="Rework">Rework</option>
+                          <option value="Resolved">Resolved</option>
+                          <option value="Ready for Testing">Ready for Testing</option>
+                        </select>
+                Issue:<input class="form-control" type="number" name="iss" id="iss">        
+                Description:<textarea class="form-control" name="desc" id="desc" cols="15" rows="1"></textarea>
+                Created By:<input class="form-control" type="text" name="createdBy" id="createdBy">
+                Assigned To:<input class="form-control" type="text" name="assignedTo" id="assignedTo">
+                Comments:<textarea class="form-control" name="comm" id="comm" cols="15" rows="1"></textarea>
+                Created At:<input class="form-control" type="datetime-local" name="cdate" id="cdate">
+                Updated At:<input class="form-control" type="datetime-local" name="udate" id="udate">
+               
+                <button class="btn btn-outline-primary btn-lg btn-block" onclick="addHtmlTableRow();">Add</button>
+                <button class="btn btn-outline-success btn-lg btn-block" onclick="editHtmlTbleSelectedRow();">Update</button>
+                <button class="btn btn-outline-danger btn-lg btn-block" onclick="removeSelectedRow();">Remove</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="table-responsive">
+
+                <table class="table table-hover table-dark" id="table">
+                    <tr>
+                        <th>Sprint</th>
+                        <th>Types</th>
+                        <th>Status</th>
+                        <th>Issue</th>
+                        <th>Description</th>
+                        <th>Created By</th>
+                        <th>Assigned To</th>
+                        <th>Comments</th>
+                        <th>Created At</th>
+                        <th>Updated At</th>
+                    </tr>
+                </table>
+</div>
+
+<div class="jumbotron">
+
+    <div class="form-group">
+        Filter By Type:
+        <select class="form-control" id="selectFieldT">
+           <option value="All" selected>All</option> 
+           <option value="Bugs">Bugs</option>
+           <option value="Features">Features</option>
+           <option value="Tasks">Tasks</option>
+           </select>
+    </div> 
+
+    <div class="form-group">
+        Filter By Status:
+        <select class="form-control" id="selectFieldS">
+            <option value="All" selected>All</option>
+            <option value="New">New</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Feedback">Feedback</option>
+            <option value="Rework">Rework</option>
+            <option value="Resolved">Resolved</option>
+            <option value="Ready for Testing">Ready for Testing</option>
+        </select>
+    </div>
+</div>
+
+<script src="main.js"></script> 
+
+</body>
+</html>
